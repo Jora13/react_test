@@ -1,1 +1,57 @@
+.App-wrapper {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template: minmax(100px, auto) 1fr minmax(70px, auto) / 1fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
 
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 300px;
+  padding-right: 30px;
+}
+
+.content {
+  flex-grow: 1;
+}
+.sidebar__list li {
+  margin-bottom: 15px;
+}
+
+.sidebar__list li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+}
+
+.sidebar__list li a:hover {
+  text-decoration: underline;
+}
+
+.sidebar__list {
+  margin-bottom: 30px;
+}
+
+.sidebar__menu a {
+  color: #000;
+  text-decoration: none;
+}
+
+.sidebar__menu a:hover {
+  text-decoration: underline;
+}
