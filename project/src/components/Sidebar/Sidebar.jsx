@@ -1,23 +1,33 @@
-const Sidebar = () => {
+import { NavLink } from "react-router-dom"
+import Friend from "./Friends"
+
+const Sidebar = (props) => {
+
+   let navlinkElements = props.state.line.map(
+      (el) => {
+         return <li><NavLink to={el.url}
+            className="sidebar__link"
+            activeClassName="active">
+            {el.name}
+         </NavLink></li>
+      }
+   )
+
+   let friendElements = props.state.friends.map((el) => {
+      return (<Friend url={el.imgUrl} name={el.name} link={el.link} />)
+   })
+
    return (
       <div className="sidebar">
-         <nav class="sidebar__menu">
-            <ul class="sidebar__list">
-               <li>
-                  <a href="" class="sidebar__link">Profiles</a>
-               </li>
-               <li>
-                  <a href="" class="sidebar__link">Messages</a>
-               </li>
-               <li>
-                  <a href="" class="sidebar__link">News</a>
-               </li>
-               <li>
-                  <a href="" class="sidebar__link">Music</a>
-               </li>
+         <nav className="sidebar__menu">
+            <ul className="sidebar__list">
+               {navlinkElements}
             </ul>
-            <a href="">Settings</a>
+            <NavLink to="/settings" activeClassName="active">Settings</NavLink>
          </nav>
+         <div className="sidebar_friends">
+            {friendElements}
+         </div>
       </div>
    )
 }

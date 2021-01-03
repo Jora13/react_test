@@ -3,17 +3,23 @@ import './App.css';
 import Footer from './components/Footer/Footer';
 import Header from "./components/Header/Header"
 import Sidebar from './components/Sidebar/Sidebar';
-import Profile from './components/Profile';
+import Dialogs from './components/Dialogs/Dialogs';
+import Profile from './components/Profile/Profile';
+import { Route } from "react-router-dom"
 
-const App = () => {
+const App = (props) => {
+
 	return (
 		<div className="App-wrapper">
 			<Header />
-
 			<div className="container">
-				<Sidebar />
+				<Sidebar state={props.state.sidebar} />
 				<div className="content">
-					<Profile />
+					<Route exact path="/dialog" render={() =>
+						<Dialogs
+							state={props.state.dialogsPage} />} />
+					<Route exact path="/profile" render={() =>
+						<Profile state={props.state.profilePage} />} />
 				</div>
 			</div>
 

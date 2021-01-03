@@ -1,9 +1,11 @@
 const Header = () => {
    return (
-      <header class="header">
-         <a href="" class="header__logo"></a>
-         <div class="header__burger">
-            <button class='btn'></button>
+      <header className="header">
+         <a href="" className="header__logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhYljJtYJXTvXGlzaAF8-48Pky-fDVlStv0w&usqp=CAU" alt="" />
+         </a>
+         <div className="header__burger">
+            <button className='btn'></button>
          </div>
       </header>
    )

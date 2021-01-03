@@ -55,3 +55,83 @@ ul {
 .sidebar__menu a:hover {
   text-decoration: underline;
 }
+
+.header__burger {
+  display: none;
+}
+
+.header__logo img {
+  width: 80px;
+}
+
+.profile__user {
+  display: flex;
+}
+.profile__avatar {
+  max-width: 200px;
+  min-width: 200px;
+  padding-right: 30px;
+}
+.profile__avatar img {
+  width: 100%;
+}
+.profile_user_title {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.dialogs_wrap {
+  display: flex;
+}
+
+.dialog_users {
+  min-width: 250px;
+  max-width: 250px;
+  padding-right: 25px;
+}
+.dialog_users li {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.dialog_message {
+  display: flex;
+}
+.dialog_message_avatar {
+  min-width: 200px;
+  max-width: 200px;
+  text-align: center;
+}
+.dialog_message_avatar img {
+  width: 100px;
+  height: auto !important;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sidebar_friends {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 60px;
+}
+.sidebar_friends .imgwr {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.sidebar_friends img {
+  width: 80px;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+.sidebar_friend:hover img {
+  opacity: 0.8;
+}
+.sidebar_friend_text {
+  text-align: center;
+  font-size: 14px;
+}
+.sidebar_friend {
+  text-decoration: none;
+  color: inherit;
+  margin-right: 10px;
+}
