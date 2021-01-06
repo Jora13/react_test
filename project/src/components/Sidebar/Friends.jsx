@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom"
 
 const Friend = (props) => {
-   console.log(props.state);
    return (
       <NavLink to={props.link} className="sidebar_friend">
          <div className="imgwr">

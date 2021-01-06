@@ -1,31 +1,35 @@
-import { NavLink } from "react-router-dom"
 import DialogItem from "./DialogItem/DialogItem"
 import Message from "./Message/Message"
 import React from 'react'
+import { updateNewMessageActionCreator, addDialogPostActionCreator } from "../../redux/dialogsReducer"
 
 
 const Dialogs = (props) => {
-   let dialogsElements = props.state.dialogs.map((el) => {
+   console.log(props);
+
+   let state = props.store.getState().dialogsPage
+
+   let dialogsElements = state.dialogs.map((el) => {
       return (
          <DialogItem name={el.name} uri={el.uri} />
       )
    })
-   let messageElements = props.state.messages.map((el) => {
+
+   let messageElements = state.messages.map((el) => {
       return (
          <Message name={el.name} message={el.message} />
       )
    })
+
    let newDialogPost = React.createRef();
 
    let addDialogPost = () => {
       let text = newDialogPost.current.value
-      //props.addDialogPost(text)
-      props.dispatch({ type: 'ADD-DIALOG-POST', postMessage: text })
+      props.addPost(text)
    }
    let onDialogChange = () => {
       let text = newDialogPost.current.value
-      //props.updateNewMessageText(text)
-      props.dispatch({ type: 'UPDATE-NEW-MESSAGE-TEXT', newText: text })
+      props.updateNewPostText(text)
    }
 
    return (
@@ -47,7 +51,7 @@ const Dialogs = (props) => {
                      <textarea placeholder="you news..." ref={newDialogPost} onChange={onDialogChange} value={props.newDialogText}></textarea>
                      <button className="btn" onClick={addDialogPost}>
                         Send
-                  </button>
+                     </button>
                   </div>
                </div>
             </div>
