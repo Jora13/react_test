@@ -6,22 +6,21 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Profile from './components/Profile/Profile';
 import { Route } from "react-router-dom"
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
 const App = (props) => {
 	return (
 		<div className="App-wrapper">
 			<Header />
 			<div className="container">
-				{/* <Sidebar state={props.state.sidebar} /> */}
 				<Sidebar />
 				<div className="content">
 					<Route exact path="/dialog" render={() =>
-						// <DialogsContainer
-						// 	store={props.store} />} />
 						<DialogsContainer />} />
 					<Route exact path="/profile" render={() =>
-						// <Profile store={props.store} state={props.state.profilePage} />} />
 						<Profile />} />
+					<Route exact path="/users" render={() =>
+						<UsersContainer />} />
 				</div>
 			</div>
 

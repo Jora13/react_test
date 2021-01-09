@@ -36,6 +36,13 @@ const Sidebar = (props) => {
                      Dialogs
                   </NavLink>
                </li>
+               <li>
+                  <NavLink to="/users"
+                     className="sidebar__link"
+                     activeClassName="active">
+                     Users
+                  </NavLink>
+               </li>
             </ul>
             <NavLink to="/settings" activeClassName="active">Settings</NavLink>
          </nav>

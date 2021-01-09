@@ -50,19 +50,27 @@ let initialStore = {
 }
 
 const dialogsReducer = (state = initialStore, action) => {
+
+
+
    switch (action.type) {
       case UPDATE_NEW_MESSAGE_TEXT:
-         state.newDialogText = action.newText
-         return state
-      case ADD_DIALOG_POST:
-         let newMessage = {
-            id: state.messages.length + 1,
-            message: action.postMessage,
-            name: '',
-            likeCount: 0
+         return {
+            ...state
          }
-         state.messages.push(newMessage)
-         return state
+
+      case ADD_DIALOG_POST:
+         let messBody = action.postMessage
+         return {
+            ...state,
+            newPostText: '',
+            messages: [...state.messages, {
+               id: state.messages.length + 1,
+               message: messBody,
+               name: '',
+               likeCount: 0
+            }]
+         }
 
       default:
          return state

@@ -5,19 +5,18 @@ import { updateNewMessageActionCreator, addDialogPostActionCreator } from "../..
 
 
 const Dialogs = (props) => {
-   console.log(props);
 
-   let state = props.store.getState().dialogsPage
+   let state = props.dialogsPage
 
    let dialogsElements = state.dialogs.map((el) => {
       return (
-         <DialogItem name={el.name} uri={el.uri} />
+         <DialogItem name={el.name} key={el.id} uri={el.uri} />
       )
    })
 
    let messageElements = state.messages.map((el) => {
       return (
-         <Message name={el.name} message={el.message} />
+         <Message name={el.name} key={el.id} message={el.message} />
       )
    })
 
@@ -26,6 +25,7 @@ const Dialogs = (props) => {
    let addDialogPost = () => {
       let text = newDialogPost.current.value
       props.addPost(text)
+      newDialogPost.current.value = ''
    }
    let onDialogChange = () => {
       let text = newDialogPost.current.value
