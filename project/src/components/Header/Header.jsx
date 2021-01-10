@@ -1,4 +1,7 @@
-const Header = () => {
+import React from 'react'
+import { NavLink } from "react-router-dom"
+
+const Header = (props) => {
    return (
       <header className="header">
          <a href="" className="header__logo">
@@ -6,6 +9,10 @@ const Header = () => {
          </a>
          <div className="header__burger">
             <button className='btn'></button>
+         </div>
+         <div className="login_block">
+            {props.isAuth ? props.login :
+               <NavLink to="/login">LogIn</NavLink>}
          </div>
       </header>
    )
