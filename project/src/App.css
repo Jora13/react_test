@@ -142,3 +142,15 @@ ul {
   color: inherit;
   margin-right: 10px;
 }
+.preloader {
+  left: 0;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+}
+.preloader img {
+  margin: auto;
+}
